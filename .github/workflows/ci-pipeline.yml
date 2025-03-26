@@ -28,3 +28,13 @@ jobs:
     
       - name: Ejecutar pruebas
         run: mvn test
+
+      - name: Analizar codigo con SonarCloud
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          mvn clean verify sonar:sonar \
+            -Dsonar.projectKey=jesusvf91_back-springboot \
+            -Dsonar.organization=jesusvf91 \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${SONAR_TOKEN}
