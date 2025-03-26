@@ -11,21 +11,22 @@ import java.util.HashMap;
 @RequestMapping("/api")
 public class HolaController {
 
-    @GetMapping("/hola")
+    @GetMapping("/saludar")
     public HashMap<Integer, String> decirHola() {
 
         HashMap<Integer, String> listado = new HashMap<>();
-        listado.put(1, "hola");
-        listado.put(2, "chao");
-
+        listado.put(1, "hola get");
+        listado.put(2, "chao get");
 
         return listado;
     }
 
-    @PostMapping("/hola")
-    public Boolean decirHolaPost() {
-        // otras logicas
+    @PostMapping("/saludar")
+    public HashMap<Integer, String> decirHolaPost() {
+        HashMap<Integer, String> listado = new HashMap<>();
+        listado.put(1, "hola post");
+        listado.put(2, "chao post");
 
-        return true;
+        return listado;
     }
 }

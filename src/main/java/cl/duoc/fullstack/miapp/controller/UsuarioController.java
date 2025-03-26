@@ -18,6 +18,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
+    @PostMapping("/listar")
     public List<Usuario> obtenerUsuarios() {
         return usuarioService.obtenerUsuarios();
     }
